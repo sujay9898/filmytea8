@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - FilmyTea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-section">
+                <img src="logo.png" alt="FilmyTea Logo" class="logo-image">
+                <h1>FilmyTea</h1>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="poster.html" class="nav-link">Poster</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+            <div class="header-icons">
+                <div class="cart-wrapper">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 17.6 16.6 18 16 18H8C7.4 18 7 17.6 7 17V13M9 21C9.6 21 10 20.6 10 20S9.6 19 9 19 8 19.4 8 20 8.4 21 9 21ZM20 21C20.6 21 21 20.6 21 20S20.6 19 20 19 19 19.4 19 20 19.4 21 20 21Z" stroke="#c9c7ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <!-- Cart Dropdown -->
+                    <div class="cart-dropdown" id="cartDropdown">
+                        <div class="cart-header">
+                            <h3>Shopping Cart</h3>
+                        </div>
+                        <div class="cart-items" id="cartItems">
+                            <p class="empty-cart">Your cart is empty</p>
+                        </div>
+                        <div class="cart-footer">
+                            <div class="cart-total">
+                                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+                            </div>
+                            <button class="checkout-btn" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-placeholder menu-icon" onclick="toggleMobileMenu()"></div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Order Confirmation Section -->
+    <section class="confirmation-section">
+        <div class="confirmation-container">
+            <!-- Success Icon and Message -->
+            <div class="confirmation-header">
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="#4ade80" stroke-width="2" fill="none"/>
+                        <path d="8 12l2 2 4-4" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your purchase. Your order has been successfully placed.</p>
+            </div>
+
+            <div class="confirmation-content">
+                <!-- Order Details -->
+                <div class="order-details">
+                    <div class="detail-section">
+                        <h3>Order Information</h3>
+                        <div class="order-info">
+                            <div class="info-row">
+                                <span class="info-label">Order ID:</span>
+                                <span class="info-value" id="orderId">FT-2025-000123</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Order Date:</span>
+                                <span class="info-value" id="orderDate">January 25, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Payment Method:</span>
+                                <span class="info-value" id="paymentMethod">Cash on Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Delivery Information</h3>
+                        <div class="delivery-info">
+                            <div class="info-row">
+                                <span class="info-label">Expected Delivery:</span>
+                                <span class="info-value delivery-date" id="deliveryDate">January 30, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Delivery Address:</span>
+                                <span class="info-value" id="deliveryAddress">Loading...</span>
+                            </div>
+                            <div class="delivery-note">
+                                <p>📦 Your order will be carefully packaged and shipped within 1-2 business days.</p>
+                                <p>📱 We'll send you SMS updates on your order status and tracking information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-confirmation">
+                    <h3>Order Summary</h3>
+                    <div class="confirmation-items" id="confirmationItems">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                    <div class="confirmation-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span>₹<span id="confirmSubtotal">0</span></span>
+                        </div>
+                        <div class="total-row">
+                            <span>Delivery Charges:</span>
+                            <span>₹<span id="confirmDelivery">50</span></span>
+                        </div>
+                        <div class="total-row final-total">
+                            <span><strong>Total Paid:</strong></span>
+                            <span><strong>₹<span id="confirmTotal">0</span></strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Confirmation Notice -->
+            <div class="email-notice">
+                <div class="notice-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="4" width="20" height="16" rx="2" stroke="#ffffff" stroke-width="2" fill="none"/>
+                        <path d="m2 6 10 6 10-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="notice-content">
+                    <h4>Email Confirmation Sent</h4>
+                    <p>We've sent a detailed order confirmation to <span id="customerEmail">your email address</span>. Please check your inbox and spam folder.</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="confirmation-actions">
+                <a href="index.html" class="action-btn primary-btn">Continue Shopping</a>
+                <button class="action-btn secondary-btn" onclick="trackOrder()">Track Your Order</button>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="support-section">
+                <h4>Need Help?</h4>
+                <p>If you have any questions about your order, feel free to <a href="contact.html">contact us</a> or call us at <strong>+91 98765 43210</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Refund Policy</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Shipping Policy</a>
+                <a href="#" class="footer-link">Terms & Conditions</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FilmyTea. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize order confirmation page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderConfirmation();
+        });
+
+        function loadOrderConfirmation() {
+            // Generate order ID
+            const orderId = 'FT-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 900000 + 100000);
+            document.getElementById('orderId').textContent = orderId;
+
+            // Set order date
+            const orderDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('orderDate').textContent = orderDate;
+
+            // Calculate delivery date (5-7 business days)
+            const deliveryDate = new Date();
+            deliveryDate.setDate(deliveryDate.getDate() + 6);
+            const deliveryDateStr = deliveryDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('deliveryDate').textContent = deliveryDateStr;
+
+            // Load order data from localStorage or URL parameters
+            const orderData = JSON.parse(localStorage.getItem('filmytea_last_order') || '{}');
+            const orderItems = JSON.parse(localStorage.getItem('filmytea_order_items') || '[]');
+
+            // Populate customer info
+            if (orderData.customerEmail) {
+                document.getElementById('customerEmail').textContent = orderData.customerEmail;
+            }
+
+            if (orderData.shippingAddress) {
+                const address = `${orderData.shippingAddress}, ${orderData.city}, ${orderData.state} - ${orderData.pincode}`;
+                document.getElementById('deliveryAddress').textContent = address;
+            }
+
+            if (orderData.paymentMethod) {
+                const paymentText = orderData.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Online Payment';
+                document.getElementById('paymentMethod').textContent = paymentText;
+            }
+
+            // Load order items
+            const confirmationItems = document.getElementById('confirmationItems');
+            if (orderItems.length > 0) {
+                const itemsHTML = orderItems.map(item => `
+                    <div class="confirmation-item">
+                        <img src="${item.image}" alt="${item.name}" class="confirmation-item-image">
+                        <div class="confirmation-item-details">
+                            <h4>${item.name}</h4>
+                            <p>₹${item.price} × ${item.quantity}</p>
+                        </div>
+                        <div class="confirmation-item-total">
+                            ₹${item.price * item.quantity}
+                        </div>
+                    </div>
+                `).join('');
+                
+                confirmationItems.innerHTML = itemsHTML;
+
+                // Calculate totals
+                const subtotal = orderItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const delivery = 50;
+                const total = subtotal + delivery;
+
+                document.getElementById('confirmSubtotal').textContent = subtotal;
+                document.getElementById('confirmDelivery').textContent = delivery;
+                document.getElementById('confirmTotal').textContent = total;
+            } else {
+                // Fallback if no order data
+                confirmationItems.innerHTML = '<p class="no-items">Order details not available</p>';
+            }
+        }
+
+        function trackOrder() {
+            const orderId = document.getElementById('orderId').textContent;
+            alert(`Order Tracking Feature Coming Soon!\n\nYour Order ID: ${orderId}\n\nWe'll notify you via SMS and email when your order ships with tracking details.`);
+            
+            // In a real application, this would redirect to a tracking page
+            console.log('Track order clicked for:', orderId);
+        }
+
+        // Clear order data after displaying (optional)
+        setTimeout(() => {
+            localStorage.removeItem('filmytea_last_order');
+            localStorage.removeItem('filmytea_order_items');
+        }, 30000); // Clear after 30 seconds
+    </script>
+</body>
+</html>

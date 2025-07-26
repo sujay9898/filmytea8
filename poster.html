@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster - FilmyTea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo-section">
+                <img src="logo.png" alt="FilmyTea Logo" class="logo-image">
+                <h1>FilmyTea</h1>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="poster.html" class="nav-link active">Poster</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+            <div class="header-icons">
+                <div class="cart-wrapper">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 17.6 16.6 18 16 18H8C7.4 18 7 17.6 7 17V13M9 21C9.6 21 10 20.6 10 20S9.6 19 9 19 8 19.4 8 20 8.4 21 9 21ZM20 21C20.6 21 21 20.6 21 20S20.6 19 20 19 19 19.4 19 20 19.4 21 20 21Z" stroke="#c9c7ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <!-- Cart Dropdown -->
+                    <div class="cart-dropdown" id="cartDropdown">
+                        <div class="cart-header">
+                            <h3>Shopping Cart</h3>
+                        </div>
+                        <div class="cart-items" id="cartItems">
+                            <p class="empty-cart">Your cart is empty</p>
+                        </div>
+                        <div class="cart-footer">
+                            <div class="cart-total">
+                                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+                            </div>
+                            <button class="checkout-btn" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-placeholder menu-icon" onclick="toggleMobileMenu()"></div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2>Poster Gallery</h2>
+                <p>Explore our curated collection of premium movie posters</p>
+            </div>
+
+            <div class="poster-gallery-grid">
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=The+Godfather" alt="The Godfather" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">The Godfather</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=Pulp+Fiction" alt="Pulp Fiction" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">Pulp Fiction</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=The+Dark+Knight" alt="The Dark Knight" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">The Dark Knight</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=Goodfellas" alt="Goodfellas" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">Goodfellas</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=Casablanca" alt="Casablanca" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">Casablanca</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ffffff?text=Citizen+Kane" alt="Citizen Kane" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title">Citizen Kane</h3>
+                </article>
+
+                <article class="gallery-poster-item">
+                    <div class="gallery-poster-image">
+                        <img src="https://via.placeholder.com/768x1084/2a2a2a/ff0000?text=Smoking+Chills" alt="Smoking Chills" loading="lazy">
+                    </div>
+                    <h3 class="gallery-poster-title" style="color: #ff0000;">Smoking Chills</h3>
+                    <div class="poster-price">
+                        <p>from ₹129</p>
+                        <button class="buy-now-btn" onclick="addToCart('Smoking Chills', 129, 'https://via.placeholder.com/768x1084/2a2a2a/ff0000?text=Smoking+Chills')">Buy Now</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Refund Policy</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Shipping Policy</a>
+                <a href="#" class="footer-link">Terms & Conditions</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FilmyTea. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

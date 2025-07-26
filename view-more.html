@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posters - FilmyTea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="FilmyTea Logo" class="logo-image">
+                    <h1>FilmyTea</h1>
+                </a>
+            </div>
+            <div class="nav-and-icons">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="poster.html" class="nav-link active">Poster</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </nav>
+                <div class="cart-wrapper">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 17.6 16.6 18 16 18H8C7.4 18 7 17.6 7 17V13M9 21C9.6 21 10 20.6 10 20S9.6 19 9 19 8 19.4 8 20 8.4 21 9 21ZM20 21C20.6 21 21 20.6 21 20S20.6 19 20 19 19 19.4 19 20 19.4 21 20 21Z" stroke="#c9c7ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <!-- Cart Dropdown -->
+                    <div class="cart-dropdown" id="cartDropdown">
+                        <div class="cart-header">
+                            <h3>Shopping Cart</h3>
+                        </div>
+                        <div class="cart-items" id="cartItems">
+                            <p class="empty-cart">Your cart is empty</p>
+                        </div>
+                        <div class="cart-footer">
+                            <div class="cart-total">
+                                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+                            </div>
+                            <button class="checkout-btn" onclick="proceedToCheckout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-placeholder menu-icon" onclick="toggleMobileMenu()"></div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="poster.html" class="nav-link active">Poster</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- All Posters Section -->
+    <section class="all-posters-section">
+        <div class="section-content">
+            <div class="page-header">
+                <h2>All Movie Posters</h2>
+                <p>Explore our complete collection of premium cinema posters</p>
+            </div>
+            
+            <div class="all-posters-grid">
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/2c3e50/ffffff?text=The+Godfather" alt="The Godfather Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>The Godfather</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="the-godfather" data-poster-name="The Godfather" data-poster-image="https://via.placeholder.com/300x450/2c3e50/ffffff?text=The+Godfather">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/8e44ad/ffffff?text=Pulp+Fiction" alt="Pulp Fiction Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Pulp Fiction</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="pulp-fiction" data-poster-name="Pulp Fiction" data-poster-image="https://via.placeholder.com/300x450/8e44ad/ffffff?text=Pulp+Fiction">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/e74c3c/ffffff?text=Casablanca" alt="Casablanca Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Casablanca</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="casablanca" data-poster-name="Casablanca" data-poster-image="https://via.placeholder.com/300x450/e74c3c/ffffff?text=Casablanca">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/27ae60/ffffff?text=The+Shawshank+Redemption" alt="The Shawshank Redemption Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>The Shawshank Redemption</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="shawshank" data-poster-name="The Shawshank Redemption" data-poster-image="https://via.placeholder.com/300x450/27ae60/ffffff?text=The+Shawshank+Redemption">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/f39c12/ffffff?text=Schindler%27s+List" alt="Schindler's List Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Schindler's List</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="schindlers-list" data-poster-name="Schindler's List" data-poster-image="https://via.placeholder.com/300x450/f39c12/ffffff?text=Schindler%27s+List">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/34495e/ffffff?text=Goodfellas" alt="Goodfellas Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Goodfellas</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="goodfellas" data-poster-name="Goodfellas" data-poster-image="https://via.placeholder.com/300x450/34495e/ffffff?text=Goodfellas">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/9b59b6/ffffff?text=Forrest+Gump" alt="Forrest Gump Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Forrest Gump</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="forrest-gump" data-poster-name="Forrest Gump" data-poster-image="https://via.placeholder.com/300x450/9b59b6/ffffff?text=Forrest+Gump">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/16a085/ffffff?text=The+Matrix" alt="The Matrix Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>The Matrix</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="the-matrix" data-poster-name="The Matrix" data-poster-image="https://via.placeholder.com/300x450/16a085/ffffff?text=The+Matrix">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/e67e22/ffffff?text=Fight+Club" alt="Fight Club Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Fight Club</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="fight-club" data-poster-name="Fight Club" data-poster-image="https://via.placeholder.com/300x450/e67e22/ffffff?text=Fight+Club">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/7f8c8d/ffffff?text=Inception" alt="Inception Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Inception</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="inception" data-poster-name="Inception" data-poster-image="https://via.placeholder.com/300x450/7f8c8d/ffffff?text=Inception">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/2ecc71/ffffff?text=Interstellar" alt="Interstellar Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>Interstellar</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="interstellar" data-poster-name="Interstellar" data-poster-image="https://via.placeholder.com/300x450/2ecc71/ffffff?text=Interstellar">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-card">
+                    <div class="poster-image">
+                        <img src="https://via.placeholder.com/300x450/c0392b/ffffff?text=The+Dark+Knight" alt="The Dark Knight Poster">
+                    </div>
+                    <div class="poster-info">
+                        <h4>The Dark Knight</h4>
+                        <div class="pricing-options">
+                            <select class="price-selector" data-poster-id="dark-knight" data-poster-name="The Dark Knight" data-poster-image="https://via.placeholder.com/300x450/c0392b/ffffff?text=The+Dark+Knight">
+                                <option value="129">A4 Unframed - ₹129</option>
+                                <option value="399">A4 Framed - ₹399</option>
+                                <option value="159">A3 Unframed - ₹159</option>
+                                <option value="499">A3 Framed - ₹499</option>
+                            </select>
+                        </div>
+                        <div class="poster-actions">
+                            <button class="add-to-cart-btn" onclick="addToCartWithOptions(this)">Add to Cart</button>
+                            <button class="buy-btn" onclick="buyPosterWithOptions(this)">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Refund policy</a>
+                <a href="#" class="footer-link">Privacy policy</a>
+                <a href="#" class="footer-link">Shipping policy</a>
+                <a href="#" class="footer-link">Terms of service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025, FilmyTea</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

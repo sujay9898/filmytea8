@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About - FilmyTea</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <a href="index.html" class="logo-section">
+                    <img
+                        src="logo.png"
+                        alt="FilmyTea Logo"
+                        class="logo-image"
+                    />
+                    <h1>FilmyTea</h1>
+                </a>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="poster.html" class="nav-link">Poster</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </nav>
+                <div class="header-icons">
+                    <div class="cart-wrapper">
+                        <div class="cart-icon" onclick="toggleCart()">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 17.6 16.6 18 16 18H8C7.4 18 7 17.6 7 17V13M9 21C9.6 21 10 20.6 10 20S9.6 19 9 19 8 19.4 8 20 8.4 21 9 21ZM20 21C20.6 21 21 20.6 21 20S20.6 19 20 19 19 19.4 19 20 19.4 21 20 21Z"
+                                    stroke="#c9c7ba"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <p class="empty-cart">Your cart is empty</p>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong
+                                        >Total: ₹<span id="cartTotal"
+                                            >0</span
+                                        ></strong
+                                    >
+                                </div>
+                                <button
+                                    class="checkout-btn"
+                                    onclick="proceedToCheckout()"
+                                >
+                                    Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="icon-placeholder menu-icon"
+                        onclick="toggleMobileMenu()"
+                    ></div>
+                </div>
+            </div>
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+        </header>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="section-content">
+                <h3>About FilmyTea</h3>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            FilmyTea is your premier destination for
+                            high-quality movie posters and digital art. We
+                            specialize in curating the finest collection of
+                            cinema posters that bring the magic of movies to
+                            your personal space.
+                        </p>
+                        <p>
+                            Our passion for film and design drives us to offer
+                            only the most stunning and authentic poster designs.
+                            Whether you're a movie enthusiast, collector, or
+                            interior designer, FilmyTea has the perfect piece to
+                            complement your style.
+                        </p>
+                        <div class="features">
+                            <div class="feature">
+                                <h4>Premium Quality</h4>
+                                <p>
+                                    High-resolution digital downloads and
+                                    premium print materials
+                                </p>
+                            </div>
+                            <div class="feature">
+                                <h4>Curated Collection</h4>
+                                <p>
+                                    Hand-picked designs from classic to
+                                    contemporary cinema
+                                </p>
+                            </div>
+                            <div class="feature">
+                                <h4>Instant Access</h4>
+                                <p>
+                                    Download your purchases immediately after
+                                    payment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="our-story-section">
+            <div class="section-content">
+                <h3>Our Story</h3>
+                <div class="story-content">
+                    <p>
+                        Founded in 2024, FilmyTea began as a passion project by
+                        a group of cinema enthusiasts who wanted to bring the
+                        artistry of movie posters into modern homes and spaces.
+                    </p>
+                    <p>
+                        We believe that great movies deserve great art, and that
+                        art deserves to be accessible to everyone. Our carefully
+                        curated collection spans decades of cinema, from
+                        timeless classics to contemporary masterpieces.
+                    </p>
+                    <p>
+                        Every poster in our collection is selected for its
+                        artistic merit, cultural significance, and ability to
+                        transform any space into a personal cinema gallery.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="section-content">
+                <h3>Our Values</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h4>Quality First</h4>
+                        <p>
+                            We never compromise on quality. Every poster meets
+                            our high standards for resolution, color accuracy,
+                            and artistic integrity.
+                        </p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Cinema Love</h4>
+                        <p>
+                            Our deep appreciation for film drives everything we
+                            do. We celebrate the art of cinema through
+                            exceptional poster designs.
+                        </p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Customer Focus</h4>
+                        <p>
+                            Your satisfaction is our priority. We're here to
+                            help you find the perfect piece for your space and
+                            style.
+                        </p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Authenticity</h4>
+                        <p>
+                            We source only authentic designs and work with
+                            talented artists to bring you original and licensed
+                            artwork.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Refund policy</a>
+                    <a href="#" class="footer-link">Privacy policy</a>
+                    <a href="#" class="footer-link">Shipping policy</a>
+                    <a href="#" class="footer-link">Terms of service</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2025, FilmyTea</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
