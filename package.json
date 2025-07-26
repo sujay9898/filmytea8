@@ -1,0 +1,16 @@
+{
+  "name": "filmytea-website",
+  "version": "1.0.0",
+  "description": "FilmyTea - Premium Digital Art Collection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["filmytea", "posters", "movies", "digital-art"],
+  "author": "FilmyTea",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
